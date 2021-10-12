@@ -18,7 +18,7 @@ bot = telebot.TeleBot("1296277300:AAEzQ8XGMCInvrbqkZCu0B1EIqw0yIwNbjQ")
 def get_new_ads(search, message):
 
 
-    driver = webdriver.Chrome(executable_path='home/den/tg/tgbot/chromedriver', options=chrome_options)
+    driver = webdriver.Chrome(executable_path='/usr/lib/chromium-browser/chromedriver', options=chrome_options)
     #driver = webdriver.Chrome(executable_path='chromedriver.exe', options=chrome_options)
     url = 'http://www.avito.ru/moskva?q='+search
     try:
