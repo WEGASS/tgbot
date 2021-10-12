@@ -77,4 +77,10 @@ def send_new_ads(message, ads):
 
     send_welcome(message)
     
-bot.polling(none_stop=True)
+while True:
+    try:
+      bot.polling(none_stop=True)
+    except: 
+      print('bolt')
+      logging.error('error: {}'.format(sys.exc_info()[0]))
+      time.sleep(5)
