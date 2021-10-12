@@ -77,4 +77,4 @@ def send_new_ads(message, ads):
 
     send_welcome(message)
     
-bot.poling(none_stop=True)
+bot.polling(none_stop=True)
