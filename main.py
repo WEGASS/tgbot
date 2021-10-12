@@ -76,5 +76,7 @@ def send_new_ads(message, ads):
         bot.send_message(message.chat.id, ads)
 
     send_welcome(message)
-
-bot.polling()
+try:
+    bot.poling(none_stop=True)
+except:
+    pass
