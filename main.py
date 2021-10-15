@@ -66,7 +66,7 @@ def process_step(message):
 
 def get_ads(message):
     bot.send_message(message.chat.id,'Подождите, идет загрузка объявлений')
-    schedule.every(5).minutes.do(get_new_ads, search = message.text, message = message))
+    schedule.every(5).minutes.do(get_new_ads, search = message.text, message = message)
     
 
 def send_new_ads(message, ads):
