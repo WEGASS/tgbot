@@ -1,5 +1,5 @@
 import time
-
+import schedule
 import telebot
 from selenium import webdriver
 from telebot import types
@@ -25,7 +25,7 @@ def get_new_ads(search, message):
         driver.get(url)
         ads = "Page title was '{}'".format(driver.title)
         print(ads)
-        ads = driver.find_elements_by_css_selector('div[class="iva-item-content-UnQQ4"]')[:10]
+        ads = driver.find_elements_by_css_selector('div[class="iva-item-content-UnQQ4"]')[:1]
 
         ads_list = []
         for ad in ads:
@@ -66,7 +66,8 @@ def process_step(message):
 
 def get_ads(message):
     bot.send_message(message.chat.id,'Подождите, идет загрузка объявлений')
-    get_new_ads(message.text, message)
+    schedule.every(5).minutes.do(get_new_ads, search = message.text, message = message))
+    
 
 def send_new_ads(message, ads):
     if len(ads) > 4096:
